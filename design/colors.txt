@@ -1,0 +1,4 @@
+main -> #FFFFFF
+second-main -> #F7F9FE
+accent -> #693FFF
+font -> #252A4C
