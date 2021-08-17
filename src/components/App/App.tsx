@@ -9,7 +9,7 @@ const App = () => {
 		<ThemeProvider theme={lightTheme}>
 			<DefaultDiv className='App'>
 				<Label>chuj</Label>
-				<Input />
+				<Input placeholder='Search' width={'18rem'} image={true} />
 				<Navbar></Navbar>
 			</DefaultDiv>
 		</ThemeProvider>
