@@ -1,17 +1,12 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import Navbar from '../Navbar/Navbar';
+import { lightTheme } from '../../themes/themes';
 
-const colors = {
-	main: '#FFFFFF',
-	background: '#F7F9FE',
-	accent: '#693FFF',
-	font: '#252A4C',
-};
+import Navbar from '../Navbar/Navbar';
 
 function App() {
 	return (
-		<ThemeProvider theme={colors}>
+		<ThemeProvider theme={lightTheme}>
 			<DefaultDiv className='App'>
 				<Navbar></Navbar>
 			</DefaultDiv>
@@ -25,5 +20,8 @@ const DefaultDiv = styled.div`
 	text-align: center;
 	min-height: 100%;
 	width: 100%;
-	background-color: ${colors.background};
+	background-color: ${lightTheme.colors.background};
+	html {
+		background-color: ${lightTheme.colors.background};
+	}
 `;
