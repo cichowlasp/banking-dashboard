@@ -7,7 +7,7 @@ import { ReactComponent as Email } from './icons/email.svg';
 import { ReactComponent as User } from './icons/user.svg';
 import { ReactComponent as List } from './icons/list.svg';
 
-function Navbar() {
+const Navbar = () => {
 	const [navbarStatus, setNavbarStatus] = useState<
 		'home' | 'bar' | 'email' | 'user' | 'list'
 	>('home');
@@ -81,7 +81,7 @@ function Navbar() {
 			</Navigation>
 		</Container>
 	);
-}
+};
 
 const Container = styled.div`
 	position: fixed;
