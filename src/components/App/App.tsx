@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../themes/themes';
 import Navbar from '../Navbar/Navbar';
 import Topbar from '../Topbar/Topbar';
+import MoreView from '../MoreView/MoreView';
 const App = () => {
+	const [moreView, setMoreView] = useState<boolean>(false);
+	const toogleMoreView = () => {
+		setMoreView((preValue) => !preValue);
+	};
 	return (
 		<ThemeProvider theme={lightTheme}>
 			<DefaultDiv className='App'>
-				<Topbar />
+				<Topbar toogleMoreView={toogleMoreView} />
 				<Navbar />
+				<MoreView moreView={moreView} toogleMoreView={toogleMoreView} />
 			</DefaultDiv>
 		</ThemeProvider>
 	);

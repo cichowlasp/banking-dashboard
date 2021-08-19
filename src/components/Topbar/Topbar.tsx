@@ -4,7 +4,9 @@ import Input from '../reusable/Input/Input';
 import { ReactComponent as NotificationIcon } from './images/bell.svg';
 import { ReactComponent as MoreIcon } from './images/more.svg';
 
-const Topbar = () => {
+const Topbar: React.FC<{ toogleMoreView: () => void }> = ({
+	toogleMoreView,
+}) => {
 	const themeColors = useContext(ThemeContext);
 	return (
 		<Container>
@@ -15,7 +17,7 @@ const Topbar = () => {
 						<NotificationIcon fill={themeColors.colors.disabled} />
 						<Dot></Dot>
 					</Icon>
-					<Icon>
+					<Icon onClick={toogleMoreView}>
 						<MoreIcon fill={themeColors.colors.disabled} />
 					</Icon>
 				</div>
@@ -65,6 +67,9 @@ const Icon = styled.div`
 	svg {
 		height: 1.5rem;
 		width: 1.5rem;
+	}
+	&:hover {
+		cursor: pointer;
 	}
 `;
 
