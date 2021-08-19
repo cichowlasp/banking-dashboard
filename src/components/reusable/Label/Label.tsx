@@ -18,6 +18,7 @@ const Text = styled.div<{ size?: string; weight?: string }>`
 	font-size: ${(props) => (props.size ? props.size : '1rem')};
 	font-weight: ${(props) => (props.weight ? props.weight : 'normal')};
 	color: ${(props) => props.color};
+	width: fit-content;
 `;
 
 export default Label;
