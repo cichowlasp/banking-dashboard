@@ -7,18 +7,18 @@ import { ReactComponent as MoreIcon } from './images/more.svg';
 const Topbar: React.FC<{ toogleMoreView: () => void }> = ({
 	toogleMoreView,
 }) => {
-	const themeColors = useContext(ThemeContext);
+	const { colors } = useContext(ThemeContext);
 	return (
 		<Container>
 			<Padding>
 				<Input placeholder='Search' image={true} width={'50vw'} />
 				<div>
 					<Icon>
-						<NotificationIcon fill={themeColors.colors.disabled} />
+						<NotificationIcon fill={colors.disabled} />
 						<Dot></Dot>
 					</Icon>
 					<Icon onClick={toogleMoreView}>
-						<MoreIcon fill={themeColors.colors.disabled} />
+						<MoreIcon fill={colors.disabled} />
 					</Icon>
 				</div>
 			</Padding>

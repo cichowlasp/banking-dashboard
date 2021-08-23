@@ -4,6 +4,7 @@ import { lightTheme } from '../../themes/themes';
 import Navbar from '../Navbar/Navbar';
 import Topbar from '../Topbar/Topbar';
 import MoreView from '../MoreView/MoreView';
+import Card from '../Card/Card';
 const App = () => {
 	const [moreView, setMoreView] = useState<boolean>(false);
 	const toogleMoreView = () => {
@@ -15,6 +16,9 @@ const App = () => {
 				<Topbar toogleMoreView={toogleMoreView} />
 				<Navbar />
 				<MoreView moreView={moreView} toogleMoreView={toogleMoreView} />
+				<Content>
+					<Card />
+				</Content>
 			</DefaultDiv>
 		</ThemeProvider>
 	);
@@ -30,4 +34,8 @@ const DefaultDiv = styled.div`
 	html {
 		background-color: ${lightTheme.colors.background};
 	}
+`;
+
+const Content = styled.div`
+	padding: 5.5rem 3rem;
 `;
