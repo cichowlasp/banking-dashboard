@@ -3,6 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 import Logo from './components/Logo/Logo';
 import Label from '../reusable/Label/Label';
 import Section from '../reusable/Section/Section';
+import Transfer from './components/Transfer/Transfer';
 import { ReactComponent as SettingsIcon } from './images/settings.svg';
 import { ReactComponent as CloseIcon } from './images/close.svg';
 import { VictoryLine } from 'victory';
@@ -55,13 +56,52 @@ const MoreView: React.FC<{ moreView: boolean; toogleMoreView: () => void }> = ({
 					<Label weight={'500'} color={colors.disabled}>
 						Total Profit
 					</Label>
-					<Label weight={'bold'} color={colors.font} size={'9vw'}>
+					<Label
+						paddingTop={'1.5rem'}
+						weight={'bold'}
+						color={colors.font}
+						size={'9vw'}>
 						$24,500
 					</Label>
 				</Section>
-				<Label weight={'600'} color={colors.font} size={'1.5rem'}>
+				<Label
+					paddingTop={'1.5rem'}
+					weight={'600'}
+					color={colors.font}
+					size={'1.5rem'}>
 					Recent Activities
 				</Label>
+				<Label
+					weight={'500'}
+					color={colors.disabled}
+					size={'0.9rem'}
+					paddingTop={'2rem'}>
+					TODAY
+				</Label>
+				<Transfer
+					name={'Dorota Cichowlas'}
+					person={true}
+					money={'53,85'}
+					title={'sent'}
+					recived={false}
+				/>
+				<Transfer
+					name={'Jakub Cichowlas'}
+					person={true}
+					money={'50,21'}
+					title={'sent'}
+					recived={true}
+				/>
+				<BreakLine />
+				<Label weight={'500'} color={colors.disabled} size={'0.9rem'}>
+					YESTERDAY
+				</Label>
+				<Transfer
+					name={'Nero'}
+					money={'5,00'}
+					title={'Cafe and restaurants'}
+					recived={false}
+				/>
 			</Wrapper>
 		</Background>
 	);
@@ -86,13 +126,6 @@ const Wrapper = styled.div<{ moreView: boolean }>`
 	max-height: 100%;
 	max-width: 100%;
 	padding: 4rem;
-
-	div {
-		&:last-child {
-			margin-top: 1.5rem;
-			word-break: break-all;
-		}
-	}
 `;
 
 const ButtonsContainer = styled.div`
@@ -134,6 +167,14 @@ const Name = styled.div`
 			margin-top: 1rem;
 		}
 	}
+`;
+
+const BreakLine = styled.div`
+	height: 1px;
+	width: 100%;
+	margin: 2rem 0;
+	border-top: 2px solid ${(props) => props.theme.colors.disabled};
+	opacity: 0.3;
 `;
 
 export default MoreView;

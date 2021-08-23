@@ -10,6 +10,10 @@ declare module 'styled-components' {
 			font: string;
 			disabled: string;
 			moreChart: string;
+			lightGreen: string;
+			green: string;
+			lightRed: string;
+			red: string;
 		};
 	}
 }
