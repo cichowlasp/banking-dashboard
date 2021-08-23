@@ -16,7 +16,7 @@ const MoreView: React.FC<{ moreView: boolean; toogleMoreView: () => void }> = ({
 				<SettingsIcon fill={colors.disabled} />
 				<CloseIcon fill={colors.disabled} onClick={toogleMoreView} />
 			</ButtonsContainer>
-			<Wrapper>
+			<Wrapper moreView={moreView}>
 				<Logo size={6} />
 				<Name>
 					<Label size={'2rem'} weight={'bold'}>
@@ -38,11 +38,16 @@ const Background = styled.div<{ moreView: boolean }>`
 	visibility: ${({ moreView }) => (moreView ? 'visible' : 'hidden')};
 	position: absolute;
 	background-color: ${(props) => props.theme.colors.main};
+	transition: right 0.35s ease-in-out;
+	right: ${({ moreView }) => (moreView ? '0' : '-100%')};
+	width: ${({ moreView }) => (moreView ? '100%' : '0')};
 	height: 100%;
-	width: 100%;
+	overflow: hidden;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ moreView: boolean }>`
+	transition: opacity 0.5s ease-in;
+	opacity: ${({ moreView }) => (moreView ? '100%' : '0%')};
 	max-height: 100%;
 	max-width: 100%;
 	padding: 4rem;
@@ -70,6 +75,8 @@ const ButtonsContainer = styled.div`
 			margin-right: 1rem;
 			&:hover {
 				background-color: ${(props) => props.theme.colors.accent};
+				transition: transform 0.2s ease-in-out;
+				transform: scale(1.2);
 			}
 		}
 		&:hover {
