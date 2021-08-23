@@ -8,8 +8,9 @@ const Section: React.FC<{ color?: string }> = ({ color, children }) => {
 const StyledSection = styled.section<{ color?: string }>`
 	background-color: ${(props) =>
 		props.color ? props.color : props.theme.colors.main};
-	padding: 1rem;
+	padding: 2rem;
 	border-radius: 2rem;
+	margin-top: 2rem;
 `;
 
 export default Section;

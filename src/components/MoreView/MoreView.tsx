@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import Logo from './components/Logo/Logo';
 import Label from '../reusable/Label/Label';
+import Section from '../reusable/Section/Section';
 import { ReactComponent as SettingsIcon } from './images/settings.svg';
 import { ReactComponent as CloseIcon } from './images/close.svg';
+import { VictoryLine } from 'victory';
 
 const MoreView: React.FC<{ moreView: boolean; toogleMoreView: () => void }> = ({
 	moreView,
@@ -29,12 +31,44 @@ const MoreView: React.FC<{ moreView: boolean; toogleMoreView: () => void }> = ({
 						Financial analystics
 					</Label>
 				</Name>
+				<Section color={colors.background}>
+					<VictoryLine
+						height={300}
+						width={500}
+						interpolation='natural'
+						style={{
+							data: {
+								stroke: colors.moreChart,
+								strokeWidth: '0.5rem',
+								strokeLinejoin: 'round',
+								width: '2rem',
+							},
+						}}
+						data={[
+							{ x: 1, y: 2 },
+							{ x: 2, y: 3 },
+							{ x: 3, y: 5 },
+							{ x: 4, y: 4 },
+							{ x: 5, y: 7 },
+						]}
+					/>
+					<Label weight={'500'} color={colors.disabled}>
+						Total Profit
+					</Label>
+					<Label weight={'bold'} color={colors.font} size={'9vw'}>
+						$24,500
+					</Label>
+				</Section>
+				<Label weight={'600'} color={colors.font} size={'1.5rem'}>
+					Recent Activities
+				</Label>
 			</Wrapper>
 		</Background>
 	);
 };
 
 const Background = styled.div<{ moreView: boolean }>`
+	transition: visability 0.5s ease-in-out;
 	visibility: ${({ moreView }) => (moreView ? 'visible' : 'hidden')};
 	position: absolute;
 	background-color: ${(props) => props.theme.colors.main};
@@ -42,7 +76,8 @@ const Background = styled.div<{ moreView: boolean }>`
 	right: ${({ moreView }) => (moreView ? '0' : '-100%')};
 	width: ${({ moreView }) => (moreView ? '100%' : '0')};
 	height: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
 `;
 
 const Wrapper = styled.div<{ moreView: boolean }>`
@@ -51,6 +86,13 @@ const Wrapper = styled.div<{ moreView: boolean }>`
 	max-height: 100%;
 	max-width: 100%;
 	padding: 4rem;
+
+	div {
+		&:last-child {
+			margin-top: 1.5rem;
+			word-break: break-all;
+		}
+	}
 `;
 
 const ButtonsContainer = styled.div`

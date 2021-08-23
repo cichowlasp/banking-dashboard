@@ -9,6 +9,7 @@ declare module 'styled-components' {
 			accent: string;
 			font: string;
 			disabled: string;
+			moreChart: string;
 		};
 	}
 }

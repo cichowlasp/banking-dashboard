@@ -7,5 +7,6 @@ export const lightTheme: DefaultTheme = {
 		accent: '#693FFF',
 		font: '#252A4C',
 		disabled: '#C1C1EB',
+		moreChart: '#F541F2',
 	},
 };
