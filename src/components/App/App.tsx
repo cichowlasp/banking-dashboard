@@ -5,6 +5,9 @@ import Navbar from '../Navbar/Navbar';
 import Topbar from '../Topbar/Topbar';
 import MoreView from '../MoreView/MoreView';
 import Card from '../Card/Card';
+import SectionWithTitle from '../reusable/SectionWithTitle/SectionWithTitle';
+import LastCostsChar from '../LastCostsChar/LastCostsChar';
+import { ReactComponent as MoreSVG } from './images/more.svg';
 const App = () => {
 	const [moreView, setMoreView] = useState<boolean>(false);
 	const toogleMoreView = () => {
@@ -18,6 +21,14 @@ const App = () => {
 				<MoreView moreView={moreView} toogleMoreView={toogleMoreView} />
 				<Content>
 					<Card />
+					<SectionWithTitle
+						title='Last costs'
+						leftContent={
+							<MoreSVG fill={lightTheme.colors.disabled} />
+						}
+						rotate={true}>
+						<LastCostsChar />
+					</SectionWithTitle>
 				</Content>
 			</DefaultDiv>
 		</ThemeProvider>
