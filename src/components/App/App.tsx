@@ -37,5 +37,5 @@ const DefaultDiv = styled.div`
 `;
 
 const Content = styled.div`
-	padding: 5.5rem 3rem;
+	padding: 6rem 2rem;
 `;

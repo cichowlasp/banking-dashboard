@@ -55,6 +55,7 @@ const Card = () => {
 };
 
 const CardContainer = styled.div`
+	margin: 0 auto;
 	height: fit-content;
 	width: 100%;
 	background-color: ${(props) => props.theme.colors.accent};
@@ -64,6 +65,7 @@ const CardContainer = styled.div`
 
 const LogoWrapper = styled.div`
 	display: flex;
+	min-height: 25vw;
 	height: fit-content;
 	justify-content: space-between;
 	width: 100%;
@@ -81,7 +83,7 @@ const CardNumber = styled.div`
 	font-weight: 600;
 	font-size: 1.1rem;
 
-	span:not(last-child) {
+	span:not(:last-child) {
 		margin-right: 1rem;
 		letter-spacing: 0.1rem;
 	}
@@ -98,7 +100,7 @@ const Data = styled.div`
 	&div:last-child {
 		padding-top: 0;
 	}
-	padding-bottom: 1rem;
+	padding-bottom: 2rem;
 `;
 
 export default Card;
