@@ -49,5 +49,5 @@ const DefaultDiv = styled.div`
 `;
 
 const Content = styled.div`
-	padding: 6rem 2rem;
+	padding: 6rem 2rem 10rem 2rem;
 `;

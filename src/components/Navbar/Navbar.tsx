@@ -93,6 +93,7 @@ const Container = styled.div`
 	align-items: center;
 	background-color: ${(props) => props.theme.colors.main};
 	border-radius: 3.2em 3.2em 0 0rem;
+	z-index: 2;
 `;
 
 const Navigation = styled.nav`
