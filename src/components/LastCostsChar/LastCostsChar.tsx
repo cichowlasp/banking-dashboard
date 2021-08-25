@@ -1,5 +1,11 @@
 import React, { useContext } from 'react';
-import { VictoryAxis, VictoryBar, VictoryChart, VictoryGroup } from 'victory';
+import {
+	VictoryAxis,
+	VictoryBar,
+	VictoryChart,
+	VictoryGroup,
+	Bar,
+} from 'victory';
 import styled, { ThemeContext } from 'styled-components';
 
 const LastCostsChar = () => {
@@ -20,7 +26,7 @@ const LastCostsChar = () => {
 	};
 	return (
 		<div>
-			<VictoryChart>
+			<VictoryChart domainPadding={{ x: 50 }}>
 				<VictoryAxis
 					tickFormat={(t) => t}
 					style={{
@@ -49,8 +55,8 @@ const LastCostsChar = () => {
 					}}
 				/>
 				<VictoryGroup
-					offset={10}
-					style={{ data: { width: 8 } }}
+					offset={12}
+					style={{ data: { width: 10 } }}
 					colorScale={[colors.disabled, colors.accent]}>
 					<VictoryBar
 						data={shortData.spendings}

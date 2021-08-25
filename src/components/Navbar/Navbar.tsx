@@ -92,7 +92,7 @@ const Container = styled.div`
 	justify-content: center;
 	align-items: center;
 	background-color: ${(props) => props.theme.colors.main};
-	border-radius: 3.2em 3.2em 0 0rem;
+	border-radius: 3em 3em 0 0rem;
 	z-index: 2;
 `;
 
