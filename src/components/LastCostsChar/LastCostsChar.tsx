@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { VictoryBar, VictoryChart, VictoryGroup } from 'victory';
+import { VictoryAxis, VictoryBar, VictoryChart, VictoryGroup } from 'victory';
 import { ThemeContext } from 'styled-components';
 
 const LastCostsChar = () => {
@@ -38,6 +38,13 @@ const LastCostsChar = () => {
 						y='arrival'
 					/>
 				</VictoryGroup>
+				<VictoryAxis tickFormat={(t) => t} />
+				<VictoryAxis
+					dependentAxis
+					tickFormat={(t) =>
+						`$${t.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
+					}
+				/>
 			</VictoryChart>
 		</div>
 	);
