@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import styled, { ThemeContext } from 'styled-components';
+import styled, { ThemeContext, keyframes } from 'styled-components';
 import Logo from './components/Logo/Logo';
 import Label from '../reusable/Label/Label';
 import Section from '../reusable/Section/Section';
@@ -8,18 +8,17 @@ import { ReactComponent as SettingsIcon } from './images/settings.svg';
 import { ReactComponent as CloseIcon } from './images/close.svg';
 import { VictoryLine } from 'victory';
 
-const MoreView: React.FC<{ moreView: boolean; toogleMoreView: () => void }> = ({
-	moreView,
+const MoreView: React.FC<{ toogleMoreView: () => void }> = ({
 	toogleMoreView,
 }) => {
 	const { colors } = useContext(ThemeContext);
 	return (
-		<Background moreView={moreView}>
+		<Background>
 			<ButtonsContainer>
 				<SettingsIcon fill={colors.disabled} />
 				<CloseIcon fill={colors.disabled} onClick={toogleMoreView} />
 			</ButtonsContainer>
-			<Wrapper moreView={moreView}>
+			<Wrapper>
 				<Logo size={6} />
 				<Name>
 					<Label size={'2rem'} weight={'bold'}>
@@ -107,22 +106,30 @@ const MoreView: React.FC<{ moreView: boolean; toogleMoreView: () => void }> = ({
 	);
 };
 
-const Background = styled.div<{ moreView: boolean }>`
-	transition: visability 0.5s ease-in-out;
-	visibility: ${({ moreView }) => (moreView ? 'visible' : 'hidden')};
+const SlideIn = keyframes`
+	from {
+		right:-100%;
+	}
+	to{
+		right:0;
+	}
+`;
+
+const Background = styled.div`
 	position: absolute;
 	background-color: ${(props) => props.theme.colors.main};
 	transition: right 0.35s ease-in-out;
-	right: ${({ moreView }) => (moreView ? '0' : '-100%')};
-	width: ${({ moreView }) => (moreView ? '100%' : '0')};
+	animation: ${SlideIn} 0.5s;
+	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
+	z-index: 3;
 `;
 
-const Wrapper = styled.div<{ moreView: boolean }>`
+const Wrapper = styled.div`
 	transition: opacity 0.5s ease-in;
-	opacity: ${({ moreView }) => (moreView ? '100%' : '0%')};
+	opacity: 100%;
 	max-height: 100%;
 	max-width: 100%;
 	padding: 4rem;
@@ -148,9 +155,9 @@ const ButtonsContainer = styled.div`
 			margin: 0rem 2rem;
 			margin-left: 1rem;
 			margin-right: 1rem;
+			transition: transform 0.2s ease-in-out;
 			&:hover {
 				background-color: ${(props) => props.theme.colors.accent};
-				transition: transform 0.2s ease-in-out;
 				transform: scale(1.2);
 			}
 		}

@@ -18,7 +18,7 @@ const App = () => {
 			<DefaultDiv className='App'>
 				<Topbar toogleMoreView={toogleMoreView} />
 				<Navbar />
-				<MoreView moreView={moreView} toogleMoreView={toogleMoreView} />
+				{moreView && <MoreView toogleMoreView={toogleMoreView} />}
 				<Content>
 					<Card />
 					<SectionWithTitle
@@ -42,6 +42,7 @@ const DefaultDiv = styled.div`
 	min-height: 100%;
 	max-width: 100vw;
 	background-color: ${lightTheme.colors.background};
+
 	html {
 		background-color: ${lightTheme.colors.background};
 	}
