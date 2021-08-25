@@ -39,15 +39,16 @@ export default App;
 
 const DefaultDiv = styled.div`
 	text-align: center;
-	min-height: 100%;
-	max-width: 100vw;
+	max-height: 100%;
+	max-width: 100%;
 	background-color: ${lightTheme.colors.background};
-
+	overflow: auto;
 	html {
 		background-color: ${lightTheme.colors.background};
 	}
 `;
 
 const Content = styled.div`
-	padding: 6rem 2rem 10rem 2rem;
+	padding: 6rem 2rem 6rem 2rem;
+	overflow-y: auto;
 `;

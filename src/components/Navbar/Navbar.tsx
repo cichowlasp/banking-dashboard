@@ -87,7 +87,7 @@ const Container = styled.div`
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	height: 7rem;
+	height: 5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;

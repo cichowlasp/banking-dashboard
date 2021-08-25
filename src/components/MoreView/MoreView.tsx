@@ -124,13 +124,13 @@ const Background = styled.div`
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
-	z-index: 3;
+	z-index: 5;
 `;
 
 const Wrapper = styled.div`
 	transition: opacity 0.5s ease-in;
 	opacity: 100%;
-	max-height: 100%;
+
 	max-width: 100%;
 	padding: 4rem;
 `;
