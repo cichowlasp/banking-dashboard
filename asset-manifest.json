@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/banking-dashboard/static/css/main.2562911e.chunk.css",
-    "main.js": "/banking-dashboard/static/js/main.3c6ae577.chunk.js",
-    "main.js.map": "/banking-dashboard/static/js/main.3c6ae577.chunk.js.map",
-    "runtime-main.js": "/banking-dashboard/static/js/runtime-main.e59c62cc.js",
-    "runtime-main.js.map": "/banking-dashboard/static/js/runtime-main.e59c62cc.js.map",
-    "static/js/2.06968860.chunk.js": "/banking-dashboard/static/js/2.06968860.chunk.js",
-    "static/js/2.06968860.chunk.js.map": "/banking-dashboard/static/js/2.06968860.chunk.js.map",
-    "static/js/3.abfcf88d.chunk.js": "/banking-dashboard/static/js/3.abfcf88d.chunk.js",
-    "static/js/3.abfcf88d.chunk.js.map": "/banking-dashboard/static/js/3.abfcf88d.chunk.js.map",
+    "main.css": "/banking-dashboard/static/css/main.f560c334.chunk.css",
+    "main.js": "/banking-dashboard/static/js/main.d28b102c.chunk.js",
+    "main.js.map": "/banking-dashboard/static/js/main.d28b102c.chunk.js.map",
+    "runtime-main.js": "/banking-dashboard/static/js/runtime-main.bc474cc6.js",
+    "runtime-main.js.map": "/banking-dashboard/static/js/runtime-main.bc474cc6.js.map",
+    "static/js/2.12ce722d.chunk.js": "/banking-dashboard/static/js/2.12ce722d.chunk.js",
+    "static/js/2.12ce722d.chunk.js.map": "/banking-dashboard/static/js/2.12ce722d.chunk.js.map",
+    "static/js/3.d1021686.chunk.js": "/banking-dashboard/static/js/3.d1021686.chunk.js",
+    "static/js/3.d1021686.chunk.js.map": "/banking-dashboard/static/js/3.d1021686.chunk.js.map",
     "index.html": "/banking-dashboard/index.html",
-    "static/css/main.2562911e.chunk.css.map": "/banking-dashboard/static/css/main.2562911e.chunk.css.map",
-    "static/js/2.06968860.chunk.js.LICENSE.txt": "/banking-dashboard/static/js/2.06968860.chunk.js.LICENSE.txt",
+    "static/css/main.f560c334.chunk.css.map": "/banking-dashboard/static/css/main.f560c334.chunk.css.map",
+    "static/js/2.12ce722d.chunk.js.LICENSE.txt": "/banking-dashboard/static/js/2.12ce722d.chunk.js.LICENSE.txt",
     "static/media/apple.f561811b.svg": "/banking-dashboard/static/media/apple.f561811b.svg",
     "static/media/bar-chart.e5c19560.svg": "/banking-dashboard/static/media/bar-chart.e5c19560.svg",
     "static/media/bell.ac7d0719.svg": "/banking-dashboard/static/media/bell.ac7d0719.svg",
@@ -27,9 +27,9 @@
     "static/media/user.78b64d9f.svg": "/banking-dashboard/static/media/user.78b64d9f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e59c62cc.js",
-    "static/js/2.06968860.chunk.js",
-    "static/css/main.2562911e.chunk.css",
-    "static/js/main.3c6ae577.chunk.js"
+    "static/js/runtime-main.bc474cc6.js",
+    "static/js/2.12ce722d.chunk.js",
+    "static/css/main.f560c334.chunk.css",
+    "static/js/main.d28b102c.chunk.js"
   ]
 }
