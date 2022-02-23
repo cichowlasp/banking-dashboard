@@ -4,12 +4,13 @@ import Input from '../reusable/Input/Input';
 import { ReactComponent as NotificationIcon } from './images/bell.svg';
 import { ReactComponent as MoreIcon } from './images/more.svg';
 
-const Topbar: React.FC<{ toogleMoreView: () => void }> = ({
+const Topbar: React.FC<{ toogleMoreView: () => void; moreView?: boolean }> = ({
 	toogleMoreView,
+	moreView,
 }) => {
 	const { colors } = useContext(ThemeContext);
 	return (
-		<Container>
+		<Container moreView={moreView}>
 			<Padding>
 				<Input placeholder='Search' image={true} width={'50vw'} />
 				<div>
@@ -26,7 +27,7 @@ const Topbar: React.FC<{ toogleMoreView: () => void }> = ({
 	);
 };
 
-const Container = styled.div`
+const Container = styled.div<{ moreView?: boolean }>`
 	position: fixed;
 	top: 0;
 	display: flex;
@@ -42,7 +43,6 @@ const Container = styled.div`
 		align-items: center;
 	}
 	@media (min-width: 1000px) {
-		width: calc(100% - 19rem);
 		flex-direction: column;
 		left: 0rem;
 		margin-left: 15rem;
@@ -51,6 +51,9 @@ const Container = styled.div`
 		padding-right: 2rem;
 		margin-top: 1rem;
 		border-radius: 2rem 2rem;
+		width: ${(props) =>
+			props.moreView ? 'calc(68% - 19rem)' : 'calc(100% - 19rem)'};
+		transition: width 0.35s ease-in-out;
 	}
 `;
 

@@ -59,7 +59,7 @@ const MoreView: React.FC<{ toogleMoreView: () => void }> = ({
 						paddingTop={'1.5rem'}
 						weight={'bold'}
 						color={colors.font}
-						size={'9vw'}>
+						size={'3rem'}>
 						$24,500
 					</Label>
 				</Section>
@@ -125,6 +125,13 @@ const Background = styled.div`
 	overflow-x: hidden;
 	overflow-y: auto;
 	z-index: 15;
+	@media (min-width: 1000px) {
+		width: 30vw;
+		right: 0;
+		height: 100%;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
 `;
 
 const Wrapper = styled.div`

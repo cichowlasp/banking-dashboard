@@ -16,7 +16,7 @@ const SectionWithTitle: React.FC<{
 				</Label>
 				<LeftContent rotate={rotate}>{leftContent}</LeftContent>
 			</TitleSection>
-			{children}
+			<Center>{children}</Center>
 		</Section>
 	);
 };
@@ -25,6 +25,16 @@ const TitleSection = styled.div`
 	display: flex;
 	width: 100%;
 	justify-content: space-between;
+`;
+
+const Center = styled.div`
+	max-height: 100%;
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
 const LeftContent = styled.div<{ rotate: boolean }>`

@@ -26,7 +26,7 @@ const Input: React.FC<{
 
 const StyledInput = styled.input<{ width: string; image: boolean }>`
 	height: 2rem;
-	width: ${(props) => props.width};
+	max-width: ${(props) => props.width};
 	border: 2px solid ${(props) => props.theme.colors.main};
 	border-radius: 1.5rem;
 	text-indent: ${(props) => (props.image ? '3rem' : '1rem')};

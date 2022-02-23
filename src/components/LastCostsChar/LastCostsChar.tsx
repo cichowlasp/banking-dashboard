@@ -19,53 +19,57 @@ const LastCostsChar = () => {
 		],
 	};
 	return (
-		<div style={{ height: '85%', width: '100%' }}>
-			<VictoryChart domainPadding={{ x: 50 }}>
-				<VictoryAxis
-					tickFormat={(t) => t}
-					style={{
-						axis: { opacity: 0 },
-						tickLabels: { fill: colors.disabled, fontSize: 20 },
-					}}
-				/>
-				<VictoryAxis
-					dependentAxis
-					tickValues={[0, 500, 1000, 1500, 2000]}
-					domain={[0, 2000]}
-					tickFormat={(t) =>
-						`$${t.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
-					}
-					style={{
-						axis: { opacity: 0 },
-						grid: {
-							stroke: colors.disabled,
-							opacity: 0.2,
-						},
-						tickLabels: {
-							fontSize: 20,
-							fill: colors.disabled,
-							padding: -5,
-						},
-					}}
-				/>
-				<VictoryGroup
-					offset={12}
-					style={{ data: { width: 10 } }}
-					colorScale={[colors.disabled, colors.accent]}>
-					<VictoryBar
-						data={shortData.spendings}
-						x='month'
-						y='arrival'
-						cornerRadius={5}
+		<div>
+			<Size>
+				<VictoryChart domainPadding={{ x: 50 }}>
+					<VictoryAxis
+						tickFormat={(t) => t}
+						style={{
+							axis: { opacity: 0 },
+							tickLabels: { fill: colors.disabled, fontSize: 20 },
+						}}
 					/>
-					<VictoryBar
-						cornerRadius={5}
-						data={shortData.arrivals}
-						x='month'
-						y='arrival'
+					<VictoryAxis
+						dependentAxis
+						tickValues={[0, 500, 1000, 1500, 2000]}
+						domain={[0, 2000]}
+						tickFormat={(t) =>
+							`$${t
+								.toString()
+								.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`
+						}
+						style={{
+							axis: { opacity: 0 },
+							grid: {
+								stroke: colors.disabled,
+								opacity: 0.2,
+							},
+							tickLabels: {
+								fontSize: 20,
+								fill: colors.disabled,
+								padding: -5,
+							},
+						}}
 					/>
-				</VictoryGroup>
-			</VictoryChart>
+					<VictoryGroup
+						offset={12}
+						style={{ data: { width: 10 } }}
+						colorScale={[colors.disabled, colors.accent]}>
+						<VictoryBar
+							data={shortData.spendings}
+							x='month'
+							y='arrival'
+							cornerRadius={5}
+						/>
+						<VictoryBar
+							cornerRadius={5}
+							data={shortData.arrivals}
+							x='month'
+							y='arrival'
+						/>
+					</VictoryGroup>
+				</VictoryChart>
+			</Size>
 			<Legend>
 				<div>
 					<Dot color={colors.accent} />
@@ -79,6 +83,12 @@ const LastCostsChar = () => {
 		</div>
 	);
 };
+
+const Size = styled.div`
+	@media (min-width: 1000px) {
+		width: 90%;
+	}
+`;
 
 const Legend = styled.div`
 	display: flex;

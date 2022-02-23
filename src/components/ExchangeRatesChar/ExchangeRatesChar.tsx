@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { VictoryAxis, VictoryLine, VictoryChart, VictoryGroup } from 'victory';
-import { ThemeContext } from 'styled-components';
+import styled, { ThemeContext } from 'styled-components';
 
 const ExchangeRatesChar = () => {
 	const { colors } = useContext(ThemeContext);
@@ -13,7 +13,7 @@ const ExchangeRatesChar = () => {
 		],
 	};
 	return (
-		<div style={{ height: '100%', width: '100%' }}>
+		<Size>
 			<VictoryChart domainPadding={{ x: 50 }}>
 				<VictoryAxis
 					tickFormat={(t) => t}
@@ -58,7 +58,11 @@ const ExchangeRatesChar = () => {
 					/>
 				</VictoryGroup>
 			</VictoryChart>
-		</div>
+		</Size>
 	);
 };
+const Size = styled.div`
+	@media (min-width: 1000px) {
+	}
+`;
 export default ExchangeRatesChar;

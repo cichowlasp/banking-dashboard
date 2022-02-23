@@ -17,12 +17,11 @@ const App = () => {
 	};
 	return (
 		<ThemeProvider theme={lightTheme}>
-			<Topbar toogleMoreView={toogleMoreView} />
+			<Topbar moreView={moreView} toogleMoreView={toogleMoreView} />
 			<Navbar />
 			<DefaultDiv>
 				{moreView && <MoreView toogleMoreView={toogleMoreView} />}
-
-				<Scroll>
+				<Scroll moreView={moreView}>
 					<Content>
 						<Title>Overview</Title>
 						<div
@@ -68,7 +67,7 @@ const App = () => {
 
 export default App;
 
-const Scroll = styled.div`
+const Scroll = styled.div<{ moreView: boolean }>`
 	background-color: ${lightTheme.colors.background};
 	height: 100%;
 	width: 100%;
@@ -78,6 +77,8 @@ const Scroll = styled.div`
 		padding-top: 1rem;
 		margin-top: 1rem;
 		margin-right: 1rem;
+		width: ${(props) => (props.moreView ? '65%' : '')};
+		transition: width 0.35s ease-in-out;
 	}
 `;
 const Title = styled.h1`
