@@ -12,60 +12,73 @@ const Card = () => {
 				<MasterCard />
 				<ApplePay />
 			</LogoWrapper>
-			<CardNumber>
-				<span>****</span>
-				<span>****</span>
-				<span>****</span>
-				<span>5610</span>
-			</CardNumber>
-			<InfoContainer>
-				<Data>
-					<Label
-						weight={'500'}
-						color={colors.disabled}
-						size={'0.9rem'}
-						paddingTop={'2rem'}>
-						VALID THRU
-					</Label>
-					<Label
-						weight={'500'}
-						color={colors.main}
-						paddingTop={'1rem'}>
-						08/22
-					</Label>
-				</Data>
-				<Data>
-					<Label
-						weight={'500'}
-						color={colors.disabled}
-						size={'0.9rem'}
-						paddingTop={'2rem'}>
-						CARD HOLDER
-					</Label>
-					<Label
-						weight={'500'}
-						color={colors.main}
-						paddingTop={'1rem'}>
-						Piotr Cicho
-					</Label>
-				</Data>
-			</InfoContainer>
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					justifyContent: 'center',
+					height: '100%',
+				}}>
+				<CardNumber>
+					<span>****</span>
+					<span>****</span>
+					<span>****</span>
+					<span>5610</span>
+				</CardNumber>
+				<InfoContainer>
+					<Data>
+						<Label
+							weight={'500'}
+							color={colors.disabled}
+							size={'0.9rem'}
+							paddingTop={'2rem'}>
+							VALID THRU
+						</Label>
+						<Label
+							weight={'500'}
+							color={colors.main}
+							paddingTop={'1rem'}>
+							08/22
+						</Label>
+					</Data>
+					<Data>
+						<Label
+							weight={'500'}
+							color={colors.disabled}
+							size={'0.9rem'}
+							paddingTop={'2rem'}>
+							CARD HOLDER
+						</Label>
+						<Label
+							weight={'500'}
+							color={colors.main}
+							paddingTop={'1rem'}>
+							Piotr Cicho
+						</Label>
+					</Data>
+				</InfoContainer>
+			</div>
 		</CardContainer>
 	);
 };
 
 const CardContainer = styled.div`
-	margin: 0 auto;
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	height: fit-content;
 	width: 100%;
 	background-color: ${(props) => props.theme.colors.accent};
 	border-radius: 1.5em;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	@media (min-width: 1000px) {
+		min-height: 20rem;
+	}
 `;
 
 const LogoWrapper = styled.div`
 	display: flex;
-	min-height: 25vw;
 	height: fit-content;
 	justify-content: space-between;
 	width: 100%;

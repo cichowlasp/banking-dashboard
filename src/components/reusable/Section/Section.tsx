@@ -11,6 +11,13 @@ const StyledSection = styled.section<{ color?: string }>`
 	padding: 2rem;
 	border-radius: 2rem;
 	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	@media (min-width: 1000px) {
+		height: 20rem;
+		max-height: 20rem;
+	}
 `;
 
 export default Section;

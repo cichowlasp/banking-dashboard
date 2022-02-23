@@ -36,9 +36,21 @@ const Container = styled.div`
 	align-items: center;
 	background-color: ${(props) => props.theme.colors.main};
 	border-radius: 0 0 2em 2em;
+	z-index: 10;
 	div {
 		display: flex;
 		align-items: center;
+	}
+	@media (min-width: 1000px) {
+		width: calc(100% - 19rem);
+		flex-direction: column;
+		left: 0rem;
+		margin-left: 15rem;
+		background-color: ${(props) => props.theme.colors.background};
+		padding-left: 2rem;
+		padding-right: 2rem;
+		margin-top: 1rem;
+		border-radius: 2rem 2rem;
 	}
 `;
 

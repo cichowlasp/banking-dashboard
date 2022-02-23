@@ -16,7 +16,7 @@ const Navbar = () => {
 
 	const onClick = (
 		name: 'home' | 'bar' | 'email' | 'user' | 'list',
-		event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+		event: React.MouseEvent<HTMLSpanElement, MouseEvent>
 	) => {
 		event.preventDefault();
 		setNavbarStatus(name);
@@ -25,67 +25,141 @@ const Navbar = () => {
 	return (
 		<Container>
 			<Navigation>
-				<a href='/' onClick={(event) => onClick('home', event)}>
-					<Home
-						fill={
-							navbarStatus === 'home'
-								? themeColors.colors.accent
-								: themeColors.colors.disabled
-						}
-					/>
-				</a>
-				<a href='/' onClick={(event) => onClick('bar', event)}>
-					<svg>
-						<Bar
+				<IconWrapper onClick={(event) => onClick('home', event)}>
+					<a href='/'>
+						<Home
 							fill={
+								navbarStatus === 'home'
+									? themeColors.colors.accent
+									: themeColors.colors.disabled
+							}
+						/>
+					</a>
+					<Label
+						style={{
+							color:
+								navbarStatus === 'home'
+									? themeColors.colors.accent
+									: themeColors.colors.disabled,
+						}}>
+						Overview
+					</Label>
+				</IconWrapper>
+				<IconWrapper onClick={(event) => onClick('bar', event)}>
+					<a href='/'>
+						<svg>
+							<Bar
+								fill={
+									navbarStatus === 'bar'
+										? themeColors.colors.accent
+										: themeColors.colors.disabled
+								}
+							/>
+						</svg>
+					</a>
+					<Label
+						style={{
+							color:
 								navbarStatus === 'bar'
 									? themeColors.colors.accent
-									: themeColors.colors.disabled
-							}
-						/>
-					</svg>
-				</a>
-				<a href='/' onClick={(event) => onClick('email', event)}>
-					<svg>
-						<Email
-							fill={
+									: themeColors.colors.disabled,
+						}}>
+						Statistics
+					</Label>
+				</IconWrapper>
+				<IconWrapper onClick={(event) => onClick('email', event)}>
+					<a href='/'>
+						<svg>
+							<Email
+								fill={
+									navbarStatus === 'email'
+										? themeColors.colors.accent
+										: themeColors.colors.disabled
+								}
+							/>
+						</svg>
+					</a>
+					<Label
+						style={{
+							color:
 								navbarStatus === 'email'
 									? themeColors.colors.accent
-									: themeColors.colors.disabled
-							}
-						/>
-					</svg>
-				</a>
-				<a href='/' onClick={(event) => onClick('user', event)}>
-					<svg>
-						<User
-							fill={
+									: themeColors.colors.disabled,
+						}}>
+						Messages
+					</Label>
+				</IconWrapper>
+				<IconWrapper onClick={(event) => onClick('user', event)}>
+					<a href='/'>
+						<svg>
+							<User
+								fill={
+									navbarStatus === 'user'
+										? themeColors.colors.accent
+										: themeColors.colors.disabled
+								}
+							/>
+						</svg>
+					</a>
+					<Label
+						style={{
+							color:
 								navbarStatus === 'user'
 									? themeColors.colors.accent
-									: themeColors.colors.disabled
-							}
-						/>
-					</svg>
-				</a>
-				<a href='/' onClick={(event) => onClick('list', event)}>
-					<svg>
-						<List
-							fill={
+									: themeColors.colors.disabled,
+						}}>
+						Profile
+					</Label>
+				</IconWrapper>
+				<IconWrapper onClick={(event) => onClick('list', event)}>
+					<a href='/'>
+						<svg>
+							<List
+								fill={
+									navbarStatus === 'list'
+										? themeColors.colors.accent
+										: themeColors.colors.disabled
+								}
+							/>
+						</svg>
+					</a>
+					<Label
+						style={{
+							color:
 								navbarStatus === 'list'
 									? themeColors.colors.accent
-									: themeColors.colors.disabled
-							}
-						/>
-					</svg>
-				</a>
+									: themeColors.colors.disabled,
+						}}>
+						Documents
+					</Label>
+				</IconWrapper>
 			</Navigation>
 		</Container>
 	);
 };
 
+const Label = styled.div`
+	display: none;
+	@media (min-width: 1000px) {
+		display: block;
+		font-weight: 800;
+	}
+`;
+
+const IconWrapper = styled.span`
+	@media (min-width: 1000px) {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		margin-left: 2rem;
+	}
+`;
+
 const Container = styled.div`
 	position: fixed;
 	bottom: 0;
+	left: 0;
 	width: 100%;
 	height: 5rem;
 	display: flex;
@@ -94,6 +168,12 @@ const Container = styled.div`
 	background-color: ${(props) => props.theme.colors.main};
 	border-radius: 3em 3em 0 0rem;
 	z-index: 2;
+	@media (min-width: 1000px) {
+		height: 100%;
+		width: 15rem;
+		flex-direction: column;
+		border-radius: 0;
+	}
 `;
 
 const Navigation = styled.nav`
@@ -118,6 +198,9 @@ const Navigation = styled.nav`
 		path {
 			fill: ${(props) => props.theme.colors.accent};
 		}
+	}
+	@media (min-width: 1000px) {
+		flex-direction: column;
 	}
 `;
 

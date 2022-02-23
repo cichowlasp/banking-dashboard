@@ -42,6 +42,10 @@ const StyledInput = styled.input<{ width: string; image: boolean }>`
 		outline: none;
 		border: 2px solid ${(props) => props.theme.colors.accent};
 	}
+	@media (min-width: 1000px) {
+		background-color: ${(props) => props.theme.colors.background};
+		border: 2px solid ${(props) => props.theme.colors.background};
+	}
 `;
 const ImageWrapper = styled.div<{ width: string }>`
 	position: relative;

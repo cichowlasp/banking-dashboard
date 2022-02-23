@@ -124,7 +124,7 @@ const Background = styled.div`
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
-	z-index: 5;
+	z-index: 15;
 `;
 
 const Wrapper = styled.div`

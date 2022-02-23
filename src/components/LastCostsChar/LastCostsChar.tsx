@@ -19,7 +19,7 @@ const LastCostsChar = () => {
 		],
 	};
 	return (
-		<div>
+		<div style={{ height: '85%', width: '100%' }}>
 			<VictoryChart domainPadding={{ x: 50 }}>
 				<VictoryAxis
 					tickFormat={(t) => t}

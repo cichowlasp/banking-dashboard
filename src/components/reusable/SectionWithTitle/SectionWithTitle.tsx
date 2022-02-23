@@ -23,12 +23,14 @@ const SectionWithTitle: React.FC<{
 
 const TitleSection = styled.div`
 	display: flex;
+	width: 100%;
 	justify-content: space-between;
 `;
 
 const LeftContent = styled.div<{ rotate: boolean }>`
 	height: 1.5rem;
-	width: 1.5rem;
+	min-width: 1.5rem;
+	width: fit-content;
 	svg {
 		transform: rotate(${(props) => (props.rotate ? '90deg' : '0')});
 	}
